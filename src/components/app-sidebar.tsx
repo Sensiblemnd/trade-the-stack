@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  IconChartBar,
-  IconDashboard,
-  IconFolder,
-  IconInnerShadowTop,
-  IconListDetails,
-  IconUsers,
-} from "@tabler/icons-react"
+import { IconInnerShadowTop } from "@tabler/icons-react"
 
 import {
   Sidebar,
@@ -19,52 +12,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import type { ComponentProps } from "react"
+import { SidebarData } from "../app/data/sidebar"
 import { NavMain } from "./nav-main"
-
-const data = {
-  navMain: [
-    {
-      title: "Javascript",
-      url: "/dashboard/javascript",
-      icon: IconDashboard,
-    },
-    {
-      title: "Library",
-      url: "#",
-      icon: IconListDetails,
-    },
-    {
-      title: "Front-end Frameworks",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Meta-Frameworks",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Testing",
-      url: "#",
-      icon: IconUsers,
-    },
-    {
-      title: "Monorepo Tools",
-      url: "#",
-      icon: IconDashboard,
-    },
-    {
-      title: "Build Tools",
-      url: "#",
-      icon: IconDashboard,
-    },
-    {
-      title: "Mobile & Desktop",
-      url: "#",
-      icon: IconDashboard,
-    },
-  ],
-}
 
 export function AppSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
   return (
@@ -82,9 +31,9 @@ export function AppSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain items={SidebarData.navMain} />
       </SidebarContent>
-      <SidebarFooter>footer </SidebarFooter>
+      <SidebarFooter> </SidebarFooter>
     </Sidebar>
   )
 }
